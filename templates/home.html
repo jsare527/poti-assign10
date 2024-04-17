@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% block title %} Home page {% endblock %}
 {% block body %}
-
+<h2 class="text-center mb-3">Blog entries</h2>
+{%for blog_item in data%}
+    <div class="card mb-3">
+        <h4 class="card-header">{{blog_item[1]}}</h4>
+        <div class="card-body">
+            <h5 class="card-title"><em>Posted on </em>{{blog_item[0]}}</h5>
+            <p class="card-text mt-2 lead"><span>{{blog_item[2]}}<span></p>
+        </div>
+    </div>
+{%endfor%}
 {% endblock %}
